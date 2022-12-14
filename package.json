@@ -1,0 +1,17 @@
+{
+  "name": "status",
+  "version": "1.0.0",
+  "description": "Run accessibility scan (axe-core) and HTML validation across several URLs",
+  "scripts": {
+    "ci-scan": "evaluatory --config \"config.json\" --no-open-results",
+    "scan": "evaluatory --config \"config.json\" --output \"local-reports\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsnmrs/status.git"
+  },
+  "author": "Jason Morris",
+  "devDependencies": {
+    "evaluatory": "^2.3.1"
+  }
+}

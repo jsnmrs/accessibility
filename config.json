@@ -1,0 +1,96 @@
+{
+  "output": "reports",
+  "urls": [
+    "https://bmxfeed.com",
+    "https://jsnmrs.github.io/pdfcheck/",
+    "https://jsnmrs.github.io/wordup/",
+    "https://jsnmrs.github.io/since/",
+    "https://doublegreat.dev",
+    "https://doublegreat.dev/theme/",
+    "https://doublegreat.dev/listen/"
+  ],
+  "sitemap": "https://jasonmorris.com/sitemap.xml",
+  "modules": ["base", "axe-core", "html-validate", "screenshot"],
+  "devices": [
+    {
+      "name": "small",
+      "options": {
+        "viewport": {
+          "width": 320,
+          "height": 1000
+        }
+      }
+    },
+    {
+      "name": "medium",
+      "options": {
+        "viewport": {
+          "width": 800,
+          "height": 1000
+        }
+      }
+    },
+    {
+      "name": "wide",
+      "options": {
+        "viewport": {
+          "width": 1440,
+          "height": 1000
+        }
+      }
+    }
+  ],
+  "playwrightOptions": {
+    "reducedMotion": "reduce"
+  },
+  "handleHttpErrorCodes": true,
+  "shouldFailOnIssue": false,
+  "browser": "chromium",
+  "modulesConfig": {
+    "base": {
+      "horizontal-content-overflow": true
+    },
+    "axe-core": {
+      "rules": {
+        "p-as-heading": { "enabled": false }
+      },
+      "runOnly": {
+        "type": "tag",
+        "values": [
+          "wcag21a",
+          "wcag21aa",
+          "wcag21aaa",
+          "best-practice",
+          "experimental"
+        ]
+      }
+    },
+    "html-validate": {
+      "extends": ["html-validate:recommended"],
+      "rules": {
+        "attr-case": "off",
+        "attr-spacing": "off",
+        "attr-quotes": "off",
+        "attribute-boolean-style": "off",
+        "attribute-empty-style": "off",
+        "doctype-style": "off",
+        "element-case": "off",
+        "element-permitted-content": "off",
+        "element-required-attributes": "off",
+        "long-title": "off",
+        "no-inline-style": "off",
+        "no-raw-characters": "off",
+        "no-redundant-role": "off",
+        "no-self-closing": "off",
+        "no-trailing-whitespace": "off",
+        "no-utf8-bom": "off",
+        "prefer-button": "off",
+        "prefer-native-element": "off",
+        "require-csp-nonce": "off",
+        "require-sri": "off",
+        "svg-focusable": "off",
+        "void-style": "off"
+      }
+    }
+  }
+}
