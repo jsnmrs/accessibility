@@ -3,14 +3,12 @@ name: Run accessibility scans
 on:
   workflow_dispatch: # enable run button on github.com
   schedule:
-    - cron: "5 5 * * *" # Run daily at 5:05am
+    - cron: "3 6 * * 1,4" # Run Monday and Thursday daily at 6:03am
 
 jobs:
   scan:
     name: Accessibility scan
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.PUSH_TOKEN }}
     steps:
       - name: Checkout branch
         uses: actions/checkout@v3
