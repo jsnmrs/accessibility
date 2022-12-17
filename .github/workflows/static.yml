@@ -3,8 +3,10 @@ name: Deploy static content to Pages
 
 on:
   workflow_dispatch: # enable run button on github.com
-  schedule:
-    - cron: "5 6 * * *" # Run daily at 6:05am
+  workflow_run:
+    workflows: [Run accessibility scans]
+    types:
+      - completed
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
