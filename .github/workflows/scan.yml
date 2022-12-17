@@ -24,18 +24,6 @@ jobs:
         run: npm install
       - name: Run scans
         run: npm run ci-scan
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: "<h1>Evaluatory<h1>"
-          replace: "<h1>Status</h1><p><a href=\"https://github.com/jsnmrs/status\">Status on GitHub</a></p>"
-          regex: false
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: "Handmade with ♥"
-          replace: "Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥"
-          regex: false
       - name: Set current date as env variable
         run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - name: Commit report to repo
