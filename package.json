@@ -4,13 +4,13 @@
   "description": "Run accessibility scan (axe-core) and HTML validation across several URLs",
   "scripts": {
     "ci-scan": "evaluatory --config \"config.json\" --no-open-results && npm run ci-header && npm run ci-disclaimer && npm run ci-footer",
-    "ci-header": "sed -i '' -e 's|<h1>Evaluatory results</h1>|<h1><a href=\"https://github.com/jsnmrs/status\">Status</a></h1>|g' reports/*.html",
-    "ci-disclaimer": "sed -i '' -e 's|<main>|<main><p><strong>These reports do not validate accessibility compliance.</strong> The included test results cover less than 50% of <a href=\"https://www.w3.org/WAI/WCAG21/quickref/\">WCAG Success Criteria</a>. Manual testing is always required to validate compliance and ensure best practices.</p>|g' reports/*.html",
-    "ci-footer": "sed -i '' -e 's|Handmade with ♥|Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥|g' reports/*.html",
+    "ci-header": "sed -i '' -e 's|<h1>Evaluatory results</h1>|<h1><a href=\"https://github.com/jsnmrs/status\">Status</a></h1>|g' ./reports/*.html",
+    "ci-disclaimer": "sed -i '' -e 's|<main>|<main><p><strong>These reports do not validate accessibility compliance.</strong> The included test results cover less than 50% of <a href=\"https://www.w3.org/WAI/WCAG21/quickref/\">WCAG Success Criteria</a>. Manual testing is always required to validate compliance and ensure best practices.</p>|g' ./reports/*.html",
+    "ci-footer": "sed -i '' -e 's|Handmade with ♥|Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥|g' ./reports/*.html",
     "scan": "evaluatory --config \"config.json\" --output \"local-reports\" && npm run header && npm run disclaimer && npm run footer",
-    "header": "sed -i '' -e 's|<h1>Evaluatory results</h1>|<h1><a href=\"https://github.com/jsnmrs/status\">Status</a></h1>|g' local-reports/*.html",
-    "disclaimer": "sed -i '' -e 's|<main>|<main><p><strong>These reports do not validate accessibility compliance.</strong> The included test results cover less than 50% of <a href=\"https://www.w3.org/WAI/WCAG21/quickref/\">WCAG Success Criteria</a>. Manual testing is always required to validate compliance and ensure best practices.</p>|g' local-reports/*.html",
-    "footer": "sed -i '' -e 's|Handmade with ♥|Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥|g' local-reports/*.html"
+    "header": "sed -i '' -e 's|<h1>Evaluatory results</h1>|<h1><a href=\"https://github.com/jsnmrs/status\">Status</a></h1>|g' ./local-reports/*.html",
+    "disclaimer": "sed -i '' -e 's|<main>|<main><p><strong>These reports do not validate accessibility compliance.</strong> The included test results cover less than 50% of <a href=\"https://www.w3.org/WAI/WCAG21/quickref/\">WCAG Success Criteria</a>. Manual testing is always required to validate compliance and ensure best practices.</p>|g' ./local-reports/*.html",
+    "footer": "sed -i '' -e 's|Handmade with ♥|Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥|g' ./local-reports/*.html"
   },
   "repository": {
     "type": "git",
