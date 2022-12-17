@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Run accessibility scan (axe-core) and HTML validation across several URLs",
   "scripts": {
-    "ci-scan": "evaluatory --config \"config.json\" --no-open-results",
-    "scan": "evaluatory --config \"config.json\" --output \"local-reports\""
+    "ci-scan": "evaluatory --config \"config.json\" --no-open-results && npm run ci-header && npm run ci-disclaimer && npm run ci-footer",
+    "ci-header": "replace '<h1>Evaluatory results</h1>' '<h1><a href=\"https://github.com/jsnmrs/status\">Status</a></h1>' ./reports -r --include=\"*.html\"",
+    "ci-disclaimer": "replace '<main>' '<main><p><strong>These reports do not validate accessibility compliance.</strong> The included test results cover less than 50% of <a href=\"https://www.w3.org/WAI/WCAG21/quickref/\">WCAG Success Criteria</a>. Manual testing is always required to validate compliance and ensure best practices.</p>' ./reports -r --include=\"*.html\"",
+    "ci-footer": "replace 'Handmade with ♥' 'Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥' ./reports -r --include=\"*.html\"",
+    "scan": "evaluatory --config \"config.json\" --output \"local-reports\" && npm run header && npm run disclaimer && npm run footer",
+    "header": "replace '<h1>Evaluatory results</h1>' '<h1><a href=\"https://github.com/jsnmrs/status\">Status</a></h1>' ./local-reports -r --include=\"*.html\"",
+    "disclaimer": "replace '<main>' '<main><p><strong>These reports do not validate accessibility compliance.</strong> The included test results cover less than 50% of <a href=\"https://www.w3.org/WAI/WCAG21/quickref/\">WCAG Success Criteria</a>. Manual testing is always required to validate compliance and ensure best practices.</p>' ./local-reports -r --include=\"*.html\"",
+    "footer": "replace 'Handmade with ♥' 'Powered by <a href=\"https://darekkay.com/evaluatory/\">Evaluatory</a>. Handmade with ♥' ./local-reports -r --include=\"*.html\""
   },
   "repository": {
     "type": "git",
@@ -12,6 +18,7 @@
   },
   "author": "Jason Morris",
   "devDependencies": {
-    "evaluatory": "^2.3.1"
+    "evaluatory": "^2.3.1",
+    "replace": "^1.2.2"
   }
 }
