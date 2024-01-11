@@ -20,6 +20,8 @@ jobs:
           cache-dependency-path: "./package-lock.json"
       - name: Install dependencies
         run: npm install
+      - name: Update browsers
+        run: npx playwright install
       - name: Run scans
         run: npm run ci-scan
       - name: Set current date as env variable
