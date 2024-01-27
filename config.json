@@ -80,6 +80,7 @@
         "element-permitted-content": "off",
         "element-required-attributes": "off",
         "long-title": "off",
+        "no-implicit-button-type": "off",
         "no-inline-style": "off",
         "no-raw-characters": "off",
         "no-redundant-role": "off",
