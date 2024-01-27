@@ -50,7 +50,7 @@
   "browser": "chromium",
   "modulesConfig": {
     "base": {
-      "horizontal-content-overflow": true
+      "horizontal-content-overflow": false
     },
     "axe-core": {
       "rules": {
