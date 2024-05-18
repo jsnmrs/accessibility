@@ -56,7 +56,7 @@
     
       
 <h2 id="module-axe-core"><a class="anchor" href="#module-axe-core" aria-label="anchor"><svg class="icon icon--anchor" role="img" aria-hidden="true"><use xlink:href="#icon-anchor"></use></svg></a>
- axe-core <span class="module-version text-offset">4.8.3</span></h2>
+ axe-core <span class="module-version text-offset">4.9.1</span></h2>
 
 <ul>
   <li>
@@ -71,15 +71,30 @@
     
       
 <h2 id="module-html-validate"><a class="anchor" href="#module-html-validate" aria-label="anchor"><svg class="icon icon--anchor" role="img" aria-hidden="true"><use xlink:href="#icon-anchor"></use></svg></a>
- html-validate <span class="module-version text-offset">8.8.0</span></h2>
+ html-validate <span class="module-version text-offset">8.18.2</span></h2>
 
 <ul>
   <li>
-    <strong class="">0 violation(s)</strong>
+    <strong class="text-danger">1 violation(s)</strong>
   </li>
   <li class="prose">View <a href="2-html-validate.json">JSON results</a></li>
 </ul>
 
+
+  <section>
+    <h3>
+      <svg class="icon icon-severity icon-severity-serious" role="img">
+        <title>Serious severity</title>
+        <use xlink:href="#icon-severity-serious"></use>
+      </svg> Anchor link must have a text describing its purpose
+    </h3>
+    <p class="prose">Violated
+      <a href="https://html-validate.org/rules/wcag/h30.html" target="_blank" rel="noopener">wcag/h30</a>
+    </p>
+    
+      <pre class="hljs" tabindex="0"><code class="language-css"><span class="hljs-selector-id">#content</span> &gt; <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">2</span>) &gt; <span class="hljs-selector-tag">div</span><span class="hljs-selector-pseudo">:nth-child</span>(<span class="hljs-number">5</span>) &gt; <span class="hljs-selector-tag">a</span> {}</code></pre>
+    
+  </section>
 
 
       <hr>
