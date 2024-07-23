@@ -90,6 +90,7 @@
         "no-utf8-bom": "off",
         "prefer-button": "off",
         "prefer-native-element": "off",
+        "prefer-tbody": "off",
         "require-csp-nonce": "off",
         "require-sri": "off",
         "svg-focusable": "off",
